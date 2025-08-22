@@ -1,0 +1,96 @@
+{
+  "policy": {
+    "version": "1.0.0",
+    "metadata": {
+      "owner": "platform-engineering",
+      "last_updated": "2025-01-18",
+      "description": "Deployment policy for all environments in this repository",
+      "repo_name": "platform-policy-engine",
+      "development_team": "platform-engineering",
+      "release_team": "release-management"
+    },
+    "environments": {
+      "production": {
+        "enabled": true,
+        "type": "production",
+        "rules": {
+          "approvals_required": 2,
+          "artifact_signed": true,
+          "allowed_branches": ["main"],
+          "require_reviewers": true,
+          "min_reviewers": 2,
+          "wait_timer_seconds": 900,
+          "require_ticket": true,
+          "ticket_provider": "service-now",
+          "ticket_pattern": "^(INC|CHG|REQ)-[0-9]{6,}$",
+          "release_controlled": true,
+          "tests_passed": true,
+          "shared_infra_except_core": false,
+          "change_recorded": true,
+          "deployment_date_agreed": true,
+          "signed_off": true,
+          "retrospective_signoff": false,
+          "components_unchanged": true,
+          "components_changed": false,
+          "rollback_instructions_present": true,
+          "max_deployments_per_day": 10,
+          "windows_utc": ["09:00-18:00"]
+        }
+      },
+      "staging": {
+        "enabled": true,
+        "type": "non-production",
+        "rules": {
+          "approvals_required": 1,
+          "artifact_signed": false,
+          "allowed_branches": ["main", "develop"],
+          "require_reviewers": true,
+          "min_reviewers": 1,
+          "wait_timer_seconds": 300,
+          "require_ticket": true,
+          "ticket_provider": "techlink",
+          "ticket_pattern": "^(INC|CHG|REQ)-[0-9]{6,}$",
+          "release_controlled": false,
+          "tests_passed": true,
+          "shared_infra_except_core": true,
+          "change_recorded": false,
+          "deployment_date_agreed": false,
+          "signed_off": false,
+          "retrospective_signoff": false,
+          "components_unchanged": false,
+          "components_changed": false,
+          "rollback_instructions_present": false,
+          "max_deployments_per_day": 50,
+          "windows_utc": null
+        }
+      },
+      "development": {
+        "enabled": true,
+        "type": "non-production",
+        "rules": {
+          "approvals_required": 0,
+          "artifact_signed": false,
+          "allowed_branches": null,
+          "require_reviewers": false,
+          "min_reviewers": 0,
+          "wait_timer_seconds": 0,
+          "require_ticket": false,
+          "ticket_provider": null,
+          "ticket_pattern": "",
+          "release_controlled": false,
+          "tests_passed": false,
+          "shared_infra_except_core": true,
+          "change_recorded": false,
+          "deployment_date_agreed": false,
+          "signed_off": false,
+          "retrospective_signoff": false,
+          "components_unchanged": false,
+          "components_changed": false,
+          "rollback_instructions_present": false,
+          "max_deployments_per_day": 100,
+          "windows_utc": null
+        }
+      }
+    }
+  }
+}

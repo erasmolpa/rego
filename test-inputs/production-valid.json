@@ -1,0 +1,22 @@
+{
+  "env": "production",
+  "ref_type": "branch",
+  "ref": "refs/heads/main",
+  "artifact_signed": true,
+  "release_controlled": true,
+  "checks": {
+    "tests": true
+  },
+  "approvers": ["user1", "user2"],
+  "shared_infra": false,
+  "change_recorded": true,
+  "ticket_id": "CHG-123456",
+  "deployment_date_agreed": true,
+  "wait_elapsed_seconds": 1000,
+  "now_utc": "2025-01-18T14:30:00Z",
+  "is_emergency": false,
+  "signed_off": true,
+  "components_changed_after_signoff": false,
+  "rollback_instructions_present": true,
+  "deployments_today": 5
+}

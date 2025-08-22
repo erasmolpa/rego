@@ -1,0 +1,22 @@
+{
+  "env": "staging",
+  "ref_type": "branch",
+  "ref": "refs/heads/develop",
+  "artifact_signed": false,
+  "release_controlled": false,
+  "checks": {
+    "tests": true
+  },
+  "approvers": ["user1"],
+  "shared_infra": true,
+  "change_recorded": false,
+  "ticket_id": "REQ-789012",
+  "deployment_date_agreed": false,
+  "wait_elapsed_seconds": 400,
+  "now_utc": "2025-01-18T15:45:00Z",
+  "is_emergency": false,
+  "signed_off": false,
+  "components_changed_after_signoff": false,
+  "rollback_instructions_present": false,
+  "deployments_today": 25
+}
